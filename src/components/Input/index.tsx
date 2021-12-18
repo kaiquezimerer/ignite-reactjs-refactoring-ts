@@ -42,9 +42,11 @@ const Input = ({ name, icon: Icon, placeholder, ...rest }: InputProps): JSX.Elem
   }, [fieldName, registerField]);
 
   return (
-    <Container isFilled={isFilled} isFocused={isFocused}>
+    <Container 
+      isFilled={isFilled} 
+      isFocused={isFocused}
+    >
       {Icon && <Icon size={20} />}
-
       <input
         ref={inputRef}
         onFocus={handleInputFocus}

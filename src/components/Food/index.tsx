@@ -3,20 +3,13 @@ import { FiEdit3, FiTrash } from 'react-icons/fi';
 
 import api from '../../services/api';
 
+import { FoodType } from '../../types';
+
 import { Container } from './styles';
 
-interface FoodType {
-  id: number;
-  name: string,
-  description: string;
-  price: number;
-  available: boolean;
-  image: string;
-}
-
 interface FoodProps {
-  available: boolean;
   food: FoodType;
+  available?: boolean;
   handleEditFood: (food: FoodType) => void;
   handleDelete: (id: number) => void;
 }
@@ -27,10 +20,10 @@ function Food({
   handleEditFood,
   handleDelete,
 }: FoodProps):JSX.Element {
-  const [isAvailable, setIsAvailable] = useState(false);
+  const [isAvailable, setIsAvailable] = useState<boolean>(false);
 
   useEffect(() => {
-    setIsAvailable(available);
+    setIsAvailable(available || false);
   }, []);
 
   async function toggleAvailable() {   
@@ -68,7 +61,6 @@ function Food({
           >
             <FiEdit3 size={20} />
           </button>
-
           <button
             type="button"
             className="icon"
@@ -78,10 +70,8 @@ function Food({
             <FiTrash size={20} />
           </button>
         </div>
-
         <div className="availability-container">
           <p>{isAvailable ? 'Disponível' : 'Indisponível'}</p>
-
           <label htmlFor={`available-switch-${food.id}`} className="switch">
             <input
               id={`available-switch-${food.id}`}

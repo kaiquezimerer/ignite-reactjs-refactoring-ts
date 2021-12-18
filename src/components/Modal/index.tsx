@@ -7,7 +7,11 @@ interface ModalProps {
   children: JSX.Element;
 }
 
-function Modal({ isOpen, setIsOpen, children,  }: ModalProps): JSX.Element {
+function Modal({ 
+  isOpen, 
+  setIsOpen, 
+  children,  
+}: ModalProps): JSX.Element {
   const [modalStatus, setModalStatus] = useState<boolean>(false);
 
   useEffect(() => {

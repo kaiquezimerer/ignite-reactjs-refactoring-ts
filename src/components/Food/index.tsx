@@ -5,7 +5,7 @@ import api from '../../services/api';
 
 import { Container } from './styles';
 
-interface Food {
+interface FoodType {
   id: number;
   name: string,
   description: string;
@@ -16,8 +16,8 @@ interface Food {
 
 interface FoodProps {
   available: boolean;
-  food: Food;
-  handleEditFood: (food: Food) => void;
+  food: FoodType;
+  handleEditFood: (food: FoodType) => void;
   handleDelete: (id: number) => void;
 }
 

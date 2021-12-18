@@ -11,10 +11,11 @@ import { Container } from './styles';
 
 interface InputProps {
   name: string;
-  icon: any;
+  icon?: any;
+  placeholder: string;
 }
 
-const Input = ({ name, icon: Icon, ...rest }: InputProps): JSX.Element => {
+const Input = ({ name, icon: Icon, placeholder, ...rest }: InputProps): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -45,10 +46,11 @@ const Input = ({ name, icon: Icon, ...rest }: InputProps): JSX.Element => {
       {Icon && <Icon size={20} />}
 
       <input
+        ref={inputRef}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         defaultValue={defaultValue}
-        ref={inputRef}
+        placeholder={placeholder}
         {...rest}
       />
     </Container>

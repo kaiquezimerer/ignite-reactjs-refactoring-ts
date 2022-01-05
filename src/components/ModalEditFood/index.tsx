@@ -30,7 +30,10 @@ function ModalEditFood({
   };
 
   return (
-    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+    <Modal 
+      isOpen={isOpen} 
+      setIsOpen={setIsOpen}
+    >
       <Form  
         ref={formRef}
         onSubmit={handleSubmit}

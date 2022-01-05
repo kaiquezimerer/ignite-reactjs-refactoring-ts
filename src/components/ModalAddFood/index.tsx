@@ -25,7 +25,7 @@ function ModalAddFood({
   async function handleSubmit(data: FoodType) {
     handleAddFood(data);
     setIsOpen();
-  };
+  }
 
   return (
     <Modal 

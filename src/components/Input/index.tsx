@@ -4,7 +4,6 @@ import {
   useState,
   useCallback,
 } from 'react';
-
 import { useField } from '@unform/core';
 
 import { Container } from './styles';

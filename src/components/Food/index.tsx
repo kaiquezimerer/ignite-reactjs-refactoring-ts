@@ -19,7 +19,7 @@ function Food({
   available, 
   handleEditFood,
   handleDelete,
-}: FoodProps):JSX.Element {
+}: FoodProps): JSX.Element {
   const [isAvailable, setIsAvailable] = useState<boolean>(false);
 
   useEffect(() => {
@@ -72,7 +72,10 @@ function Food({
         </div>
         <div className="availability-container">
           <p>{isAvailable ? 'Disponível' : 'Indisponível'}</p>
-          <label htmlFor={`available-switch-${food.id}`} className="switch">
+          <label 
+            htmlFor={`available-switch-${food.id}`} 
+            className="switch"
+          >
             <input
               id={`available-switch-${food.id}`}
               type="checkbox"
